@@ -24,10 +24,21 @@ class Carnatic:
         self.ascending(pattern)
         self.descending(pattern)
 
+    def thaalam3(self): # Chathurasha jaathi rupaka thaalam
+        pattern = [1, 2, 1, 2, 3, 4]
+        self.scale(pattern)
+
     def thaalam4(self): #misra jaathi jhumpa thaalam
         pattern = [1, 2, 3, 1, 2, 1, 2, 3, 4]
         self.scale(pattern)  
+    
+    def thaalam5(self):
+        pattern = [1, 2, 3, 1, 2, 3, 4]
+        self.scale(pattern)
         
+    def customThaalam(self):
+        pattern = input("\ninput thaalam pattern (e.g. 1 2 3 1 2 1 2 3 4\t").split()
+        self.scale(pattern)
     
 
 #assumption that avarohanam is reverse of arohanam
@@ -36,3 +47,5 @@ avarohanam = arohanam[::-1]
 
 carnatic = Carnatic(arohanam, avarohanam)
 carnatic.thaalam4()
+print("\n\n\n")
+carnatic.thaalam3()
