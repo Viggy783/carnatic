@@ -1,3 +1,6 @@
+# to input pattern, 1 denotes first note of scale, 2 denotes 2nd note, etc
+# 0 denotes "","
+
 class Carnatic:
 
     def __init__(self, aro, avaro, tha):
@@ -13,15 +16,24 @@ class Carnatic:
     def ascending(self, pattern):
         for i in range(5):
             for j in range(len(pattern)):
+                if pattern[j] == 0: #comma
+                    print(",", end = " ")
+                    continue
+
                 print(self.aro[i + (pattern[j] - 1)], end = " ")
             print("||\n")  
+            
     
     def descending(self, pattern):
         print("---")
         for i in range(5):
             for j in range(len(pattern)):
+                if pattern[j] == 0: #comma
+                    print(", ", end = " ")
+                    continue
+
                 print(self.avaro[i + (pattern[j] - 1)], end = " ")
-            print("||\n")
+            print("||\n")  
 
     def scale(self, pattern):
         self.ascending(pattern)
@@ -33,11 +45,11 @@ class Carnatic:
             "1": [1, 2, 3, 4, 3, 2, 1, 2, 3, 2, 1, 2, 3, 4], #chaturasrajaati dhruva thaalam
             "2": [1, 2, 3, 2, 1, 2, 1, 2, 3, 4], #chathurasra jaati matya thaalam
             "3": [1, 2, 1, 2, 3, 4],
-            "4": [1, 2, 3, 1, 2, 1, 2, 3, 4],
+            "4": [1, 2, 3, 1, 2, 1, 2, 3, 4, 0],
             "5": [1, 2, 3, 1, 2, 3, 4],
-            "6": None,
+            "6": [1, 2, 0, 3, 0, 1, 0, 2, 3, 0, 4, 0, 4, 0],
             "7": [1, 2, 3, 4],
-            "8": None,
+            "8": [1, 0, 2, 0, 3, 0, 4, 5, 6]
         }
 
         self.scale(thaalamList[thaalam])
