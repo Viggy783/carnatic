@@ -72,7 +72,7 @@ while(q == False):
     arohanam = input("\n\n\n----\ninput arohanam (e.g. S R G M P D N S)\t").split()
     avarohanam = arohanam[::-1]
     
-    thaalam = input('\ninput thaalam number (e.g. 4)\t')
+    thaalam = input('\ninput thaalam number (e.g. 4; 0 for custom pattern)\t')
     carnatic = Carnatic(arohanam, avarohanam, tha=thaalam)
     
     rerun = input("\nRerun? (y/n)\t")
